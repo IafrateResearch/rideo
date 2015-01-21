@@ -1,7 +1,12 @@
 
+## e.g:
+## Rscript rideo.R GUIDE-Seq-Off-targets_simple.txt
+
+infile = commandArgs(TRUE)[1]
+
 cyto = read.table('cytoband.txt', header=T, stringsAsFactors=F)
 head(cyto)
-allsite = read.table('GUIDE-Seq-Off-targets_simple.txt', sep='\t', stringsAsFactors=F, header=T)
+allsite = read.table(infile, sep='\t', stringsAsFactors=F, header=T)
 head(allsite)
 
 chrs = unique(cyto$Chromosome)
